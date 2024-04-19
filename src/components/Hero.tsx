@@ -11,54 +11,92 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+} from "@/components/ui/navigation-menu";
 
 const Hero: React.FC = () => {
   return (
     <section className="mx-auto max-w-6xl w-full">
-      <div className="flex flex-wrap sm:flex-nowrap items-center sm:justify-between py-4 px-8 gap-6 sm:gap-0">
-        <div className="flex flex-wrap sm:flex-nowrap items-center justify-center sm:justify-normal gap-6 sm:gap-16">
-          <div className="flex flex-col items-center justify-center h-full">
-            <Image
-              src="/menu.svg"
-              alt="logo"
-              width={32}
-              height={32}
-              className="my-6"
-            />
-            <p className="">Sell phone</p>
-          </div>
+      <NavigationMenu>
+        <NavigationMenuList>
+          <div className="flex flex-wrap sm:flex-nowrap items-center sm:justify-between py-4 px-8 gap-6 sm:gap-0">
+            <div className="flex flex-wrap sm:flex-nowrap items-center justify-center sm:justify-normal gap-6 sm:gap-16">
+              <div className="flex flex-col items-center justify-center h-full">
+                <Image
+                  src="/menu.svg"
+                  alt="logo"
+                  width={32}
+                  height={32}
+                  className="my-6"
+                />
+                <p className="">Menu</p>
+              </div>
 
-          <div className="flex flex-col items-center justify-center">
-            <Image src="/sellphone.svg" alt="logo" width={80} height={80} />
-            Sell phone
-          </div>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger
+                  iconDisable
+                  className="h-fit w-fit flex flex-col items-center justify-center"
+                >
+                  <Image
+                    src="/sellphone.svg"
+                    alt="logo"
+                    width={80}
+                    height={80}
+                  />
+                  Sell phone
+                </NavigationMenuTrigger>
 
-          <div className="flex flex-col items-center justify-center">
-            <Image src="/buyphone.svg" alt="logo" width={80} height={80} />
-            Buy phone
-          </div>
+                <NavigationMenuContent className="w-screen border h-[300px]">
+                  {/* <NavigationMenuLink>Link</NavigationMenuLink> */}
+                </NavigationMenuContent>
+              </NavigationMenuItem>
 
-          <div className="flex flex-col items-center justify-center">
-            <Image src="/sellgadget.svg" alt="logo" width={80} height={80} />
-            Sell Gadget
-          </div>
+              <div className="flex flex-col items-center justify-center">
+                <Image src="/buyphone.svg" alt="logo" width={80} height={80} />
+                Buy phone
+              </div>
 
-          <div className="flex flex-col items-center justify-center">
-            <Image src="/b2b.svg" alt="logo" width={80} height={80} />
-            B2B
-          </div>
+              <div className="flex flex-col items-center justify-center">
+                <Image
+                  src="/sellgadget.svg"
+                  alt="logo"
+                  width={80}
+                  height={80}
+                />
+                Sell Gadget
+              </div>
 
-          <div className="flex md:hidden flex-col items-center justify-center">
-            <Image src="/selectcity.svg" alt="logo" width={76} height={76} />
-            Select City
-          </div>
-        </div>
+              <div className="flex flex-col items-center justify-center">
+                <Image src="/b2b.svg" alt="logo" width={80} height={80} />
+                B2B
+              </div>
 
-        <div className="hidden md:flex flex-col items-center ">
-          <Image src="/selectcity.svg" alt="logo" width={76} height={76} />
-          Select City
-        </div>
-      </div>
+              <div className="flex md:hidden flex-col items-center justify-center">
+                <Image
+                  src="/selectcity.svg"
+                  alt="logo"
+                  width={76}
+                  height={76}
+                />
+                Select City
+              </div>
+            </div>
+
+            <div className="hidden md:flex flex-col items-center ">
+              <Image src="/selectcity.svg" alt="logo" width={76} height={76} />
+              Select City
+            </div>
+          </div>
+        </NavigationMenuList>
+      </NavigationMenu>
 
       <Carousel
         opts={{
