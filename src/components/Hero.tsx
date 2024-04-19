@@ -15,8 +15,8 @@ import {
 const Hero: React.FC = () => {
   return (
     <section className="mx-auto max-w-6xl w-full">
-      <div className="flex items-center justify-between py-4 px-8">
-        <div className="flex items-center gap-16">
+      <div className="flex flex-wrap sm:flex-nowrap items-center sm:justify-between py-4 px-8 gap-6 sm:gap-0">
+        <div className="flex flex-wrap sm:flex-nowrap items-center justify-center sm:justify-normal gap-6 sm:gap-16">
           <div className="flex flex-col items-center justify-center h-full">
             <Image
               src="/menu.svg"
@@ -47,9 +47,14 @@ const Hero: React.FC = () => {
             <Image src="/b2b.svg" alt="logo" width={80} height={80} />
             B2B
           </div>
+
+          <div className="flex md:hidden flex-col items-center justify-center">
+            <Image src="/selectcity.svg" alt="logo" width={76} height={76} />
+            Select City
+          </div>
         </div>
 
-        <div className="flex flex-col items-center">
+        <div className="hidden md:flex flex-col items-center ">
           <Image src="/selectcity.svg" alt="logo" width={76} height={76} />
           Select City
         </div>
@@ -65,7 +70,7 @@ const Hero: React.FC = () => {
           }),
         ]}
       >
-        <CarouselContent className="w-full h-[300px] rounded-md mt-4">
+        <CarouselContent className="w-full sm:h-[300px] rounded-md mt-4">
           <CarouselItem className="pl-8">
             <img
               src="/banner.svg"
@@ -102,8 +107,8 @@ const Hero: React.FC = () => {
             />
           </CarouselItem>
         </CarouselContent>
-        <CarouselPrevious className="h-12 w-12 -left-4" />
-        <CarouselNext className="h-12 w-12 -right-4" />
+        <CarouselPrevious className="h-12 w-12 -left-4 hidden md:flex" />
+        <CarouselNext className="h-12 w-12 -right-4 hidden md:flex" />
       </Carousel>
     </section>
   );

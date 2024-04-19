@@ -7,7 +7,7 @@ import {
 
 const FAQ: React.FC = () => {
   return (
-    <div className="mx-auto w-full max-w-6xl mt-16">
+    <div className="mx-auto w-full max-w-6xl mt-16 px-4 lg:px-0">
       <h3 className="font-semibold text-2xl">FAQ</h3>
 
       <Accordion type="single" collapsible>

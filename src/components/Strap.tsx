@@ -13,6 +13,7 @@ const Strap: React.FC = () => {
     <Swiper
       modules={[Autoplay]}
       slidesPerView={7}
+      spaceBetween={20}
       className="mt-32 select-none"
       loop={true}
       autoplay={{

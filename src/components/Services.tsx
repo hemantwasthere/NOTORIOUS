@@ -2,10 +2,10 @@ import Image from "next/image";
 
 const Services: React.FC = () => {
   return (
-    <div className="mt-16 mx-auto max-w-6xl w-full">
+    <div className="mt-16 mx-auto max-w-6xl w-full px-3 2xl:px-0">
       <h3 className="font-semibold uppercase text-lg my-3">Our Services</h3>
 
-      <div className="flex items-start gap-6">
+      <div className="flex flex-wrap items-center justify-center sm:flex-nowrap sm:items-start sm:justify-normal gap-6">
         <div className="flex flex-col justify-items-center gap-2 text-center w-fit">
           <Image
             src="/services_sell_phone.svg"

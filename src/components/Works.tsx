@@ -6,7 +6,7 @@ const Works: React.FC = () => {
       <h3 className="text-center text-2xl font-semibold">How It&apos;s Work</h3>
       <div className="mx-auto bg-black border-[0.8px] border-black rounded-full w-[30%] mt-2" />
 
-      <div className="flex items-center justify-between gap-3 mt-5">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-3 mt-5">
         <div className="flex flex-col items-center">
           <div className="">
             <Image
