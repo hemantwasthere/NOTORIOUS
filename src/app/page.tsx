@@ -1,3 +1,15 @@
+import Hero from "@/components/Hero";
+import Services from "@/components/Services";
+import Strap from "@/components/Strap";
+import Works from "@/components/Works";
+
 export default function Home() {
-  return <main className=""></main>;
+  return (
+    <main>
+      <Hero />
+      <Services />
+      <Works />
+      <Strap />
+    </main>
+  );
 }

@@ -1,4 +1,16 @@
+/* eslint-disable @next/next/no-img-element */
+"use client";
+
+import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const Hero: React.FC = () => {
   return (
@@ -43,14 +55,53 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      <div className="w-full h-[300px] rounded-md relative mt-4">
-        <Image
-          src="/banner.svg"
-          fill
-          className="object-cover rounded-md"
-          alt="banner"
-        />
-      </div>
+      <Carousel
+        plugins={[
+          Autoplay({
+            delay: 2000,
+          }),
+        ]}
+      >
+        <CarouselContent className="w-full h-[300px] rounded-md mt-4">
+          <CarouselItem className="pl-8">
+            <img
+              src="/banner.svg"
+              className="object-cover rounded-md"
+              alt="banner"
+            />
+          </CarouselItem>
+          <CarouselItem className="pl-8">
+            <img
+              src="/banner2.svg"
+              className="object-cover rounded-md"
+              alt="banner"
+            />
+          </CarouselItem>
+          <CarouselItem className="pl-8">
+            <img
+              src="/banner3.svg"
+              className="object-cover rounded-md"
+              alt="banner"
+            />
+          </CarouselItem>
+          <CarouselItem className="pl-8">
+            <img
+              src="/banner4.svg"
+              className="object-cover rounded-md"
+              alt="banner"
+            />
+          </CarouselItem>
+          <CarouselItem className="pl-8">
+            <img
+              src="/banner5.svg"
+              className="object-cover rounded-md"
+              alt="banner"
+            />
+          </CarouselItem>
+        </CarouselContent>
+        <CarouselPrevious className="h-12 w-12 -left-4" />
+        <CarouselNext className="h-12 w-12 -right-4" />
+      </Carousel>
     </section>
   );
 };
