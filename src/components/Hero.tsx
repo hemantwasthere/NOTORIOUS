@@ -56,6 +56,9 @@ const Hero: React.FC = () => {
       </div>
 
       <Carousel
+        opts={{
+          loop: true,
+        }}
         plugins={[
           Autoplay({
             delay: 2000,

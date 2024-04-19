@@ -1,3 +1,4 @@
+import Bottom from "@/components/Bottom";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Strap from "@/components/Strap";
@@ -10,6 +11,7 @@ export default function Home() {
       <Services />
       <Works />
       <Strap />
+      <Bottom />
     </main>
   );
 }
