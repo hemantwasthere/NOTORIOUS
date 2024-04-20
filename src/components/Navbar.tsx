@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
         <div className="w-full relative">
           <Input
             type="text"
-            className="py-2 pl-2 sm:pr-10 w-full outline-none border-2 border-gray-400 rounded-lg hover:border-amber-400 transition-all"
+            className="py-2 pl-2 sm:pr-10 w-full outline-none border-2 border-gray-400 rounded-lg hover:border-amber-400 transition-all focus-visible:border-black focus-visible:ring-0 focus-within:ring-0 focus:ring-0 ring-0"
             placeholder="Search For Mobile accessories & More"
           />
           <Search className="hidden sm:block absolute top-2 right-2" />
