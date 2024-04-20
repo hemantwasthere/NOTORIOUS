@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
     <header className="py-2 px-3 border-b border-gray-400">
       <div className="max-w-6xl mx-auto w-full flex items-center justify-between gap-2 sm:gap-5">
         <Link href="/">
-          <Image src="/soldold.svg" alt="logo" width={80} height={80} />
+          <Image src="/soldold.svg" alt="logo" width={200} height={47} />
         </Link>
 
         <div className="w-full relative">
@@ -22,7 +22,9 @@ const Navbar: React.FC = () => {
           <Search className="hidden sm:block absolute top-2 right-2" />
         </div>
 
-        <Button className="bg-blue-500 w-16 sm:w-32 rounded-lg">Login</Button>
+        <Button className="bg-amber-300 text-black hover:bg-amber-400 w-16 sm:w-32 rounded-lg text-base">
+          Login
+        </Button>
       </div>
     </header>
   );
