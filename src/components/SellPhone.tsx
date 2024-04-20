@@ -309,7 +309,7 @@ const SellPhone: React.FC = () => {
 
   return (
     <div className="py-8 border-y border-t-black w-full">
-      {!moreBrands && !selectBrand ? (
+      {!moreBrands && !selectBrand && !selectSeries ? (
         <div className="w-full mx-auto max-w-6xl border-2 rounded-lg px-6 pt-12 pb-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="flex flex-col items-center gap-[2rem] w-full sm:w-[50%]">
@@ -331,7 +331,14 @@ const SellPhone: React.FC = () => {
               </div>
 
               <div className="flex flex-wrap sm:flex-nowrap items-center justify-start gap-3 w-full">
-                <Image src="/apple.svg" alt="apple" width={100} height={100} />
+                <Image
+                  onClick={() => setSelectSeries("apple")}
+                  className="cursor-pointer"
+                  src="/apple.svg"
+                  alt="apple"
+                  width={100}
+                  height={100}
+                />
                 <Image
                   src="/samsung2.svg"
                   alt="samsung2"
@@ -376,10 +383,10 @@ const SellPhone: React.FC = () => {
       ) : (
         moreBrands &&
         !selectBrand && (
-          <div className="w-full mx-auto max-w-6xl">
+          <div className="w-full mx-auto max-w-6xl px-2 2xl:px-0">
             <h3 className="text-2xl font-semibold">Select Brand</h3>
 
-            <div className="mt-5 flex flex-wrap items-center justify-start gap-y-8 gap-x-12 w-full">
+            <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-4  sm:justify-start sm:gap-y-8 sm:gap-x-12 w-full">
               {BRANDS.map((brand) => (
                 <Image
                   key={brand.name}
@@ -402,10 +409,10 @@ const SellPhone: React.FC = () => {
       )}
 
       {selectBrand && !selectSeries && (
-        <div className="w-full mx-auto max-w-6xl">
+        <div className="w-full mx-auto max-w-6xl px-2 2xl:px-0">
           <h3 className="text-2xl font-semibold">Select Series</h3>
 
-          <div className="mt-5 flex flex-wrap items-center justify-start gap-y-6 gap-x-12 w-full">
+          <div className="mt-5 flex flex-wrap items-center justify-center sm:justify-start gap-y-3 gap-x-6 sm:gap-y-6 sm:gap-x-12 w-full">
             {BRANDS.find((brand) => brand.name === selectBrand)?.series?.map(
               (series, i) => (
                 <Button
@@ -424,10 +431,10 @@ const SellPhone: React.FC = () => {
       )}
 
       {selectSeries && !exactValueButtonClicked && (
-        <div className="mx-auto max-w-6xl w-full">
+        <div className="mx-auto max-w-6xl w-full px-2 2xl:px-0">
           <h3 className="text-2xl font-semibold my-4">Sell Your iPhone 13</h3>
           <div className="w-full mx-auto max-w-6xl border-2 shadow-md rounded-lg py-3">
-            <div className="flex flex-col items-center justify-center">
+            <div className="flex flex-col items-center justify-center px-3 sm:px-0">
               <h4 className="text-lg font-semibold">Apple iPhone 13</h4>
               <Image
                 src={"/iphone13.svg"}
@@ -437,9 +444,9 @@ const SellPhone: React.FC = () => {
               />
               <p>Choose a Variant</p>
 
-              <div className="mx-auto bg-black border-[0.8px] border-black rounded-full w-[40%] my-2" />
+              <div className="mx-auto bg-black border-[0.8px] border-black rounded-full w-full sm:w-[40%] my-2" />
 
-              <div className="w-[40%] flex items-center gap-2">
+              <div className="w-full sm:w-[40%] flex items-center gap-2">
                 <Button
                   className={cn(
                     "border-2 bg-transparent hover:bg-gray-200 hover:shadow-none text-gray-800 rounded-lg px-5 py-3 w-full transition-all shadow-md",
@@ -484,7 +491,7 @@ const SellPhone: React.FC = () => {
               </div>
 
               <Button
-                className="w-[25%] bg-green-500 text-white hover:bg-green-400 mt-4 font-semibold text-lg disabled:bg-gray-400"
+                className="sm:w-[25%] bg-green-500 text-white hover:bg-green-400 mt-4 font-semibold text-lg disabled:bg-gray-400"
                 disabled={!selectVariant}
                 onClick={() => {
                   setExactValueButtonClicked(true);
@@ -509,14 +516,14 @@ const SellPhone: React.FC = () => {
       {exactValueButtonClicked && !accessoriesButtonClicked && (
         <div
           className={cn(
-            "mx-auto max-w-6xl w-full h-[27rem] flex items-center gap-4",
+            "mx-auto max-w-6xl w-full h-full md:h-[27rem] flex flex-col md:flex-row items-center gap-4 px-2 2xl:px-0",
             {
-              "h-[42rem]": physicalConditionButtonClicked,
-              "h-[23rem]": functionalConditionButtonClicked,
+              "h-full md:h-[42rem]": physicalConditionButtonClicked,
+              "h-full md:h-[23rem]": functionalConditionButtonClicked,
             }
           )}
         >
-          <div className="h-full flex flex-col items-center justify-center w-[35%] border-2 rounded-lg">
+          <div className="h-full flex flex-col items-center justify-center w-full md:w-[35%] border-2 rounded-lg">
             <Image
               src="/iphone13.svg"
               alt="iphone 13"
@@ -526,11 +533,11 @@ const SellPhone: React.FC = () => {
             <p className="text-xl font-semibold">Apple iPhone 13</p>
             <p className="text-sm">( 4 GB/{selectVariant})</p>
             <div className="my-2 mx-auto bg-black border-[0.8px] border-black rounded-full w-[80%]" />
-            <p className="text-sm">Device Evaluation</p>
+            <p className="text-sm pb-3 md:pb-0">Device Evaluation</p>
           </div>
 
           {!normalConditionButtonClicked && (
-            <div className="w-[65%] h-full border-2 rounded-lg p-4">
+            <div className="w-full md:w-[65%] h-full border-2 rounded-lg p-4">
               <h4 className="text-base text-center">
                 Tell use More About Your Device
               </h4>
@@ -542,7 +549,7 @@ const SellPhone: React.FC = () => {
                 {DEVICE_INFO.normalCondition.map((info, i) => (
                   <div key={i} className="flex flex-col items-start gap-2">
                     {i + 1}. {info}
-                    <div className="flex items-center gap-2">
+                    <div className="flex flex-col md:flex-row items-center gap-2">
                       <Button
                         className={cn(
                           "border-2 bg-transparent hover:bg-gray-200 hover:shadow-none text-gray-800 rounded-lg px-5 py-3 w-[12rem] transition-all shadow-md",
@@ -583,7 +590,7 @@ const SellPhone: React.FC = () => {
                 ))}
 
                 <Button
-                  className="mt-4 w-[25%] bg-green-500 text-white hover:bg-green-400 font-semibold text-lg disabled:bg-gray-400 mx-auto"
+                  className="mt-4 md:w-[25%] bg-green-500 text-white hover:bg-green-400 font-semibold text-lg disabled:bg-gray-400 mx-auto"
                   disabled={normalConditionAnswers.includes(undefined as never)}
                   onClick={() => {
                     setNormalConditionButtonClicked(true);
@@ -596,7 +603,7 @@ const SellPhone: React.FC = () => {
           )}
 
           {normalConditionButtonClicked && !physicalConditionButtonClicked && (
-            <div className="w-[65%] h-full border-2 rounded-lg p-4">
+            <div className="w-full md:w-[65%] h-full border-2 rounded-lg p-4">
               <h4 className="text-base text-center">
                 Select Screen / Body That Are Applicable{" "}
               </h4>
@@ -631,7 +638,7 @@ const SellPhone: React.FC = () => {
                   </div>
                 ))}
                 <Button
-                  className="mt-[2rem] w-[25%] bg-green-500 text-white hover:bg-green-400 font-semibold text-lg disabled:bg-gray-400 mx-auto"
+                  className="mt-[2rem] md:w-[25%] bg-green-500 text-white hover:bg-green-400 font-semibold text-lg disabled:bg-gray-400 mx-auto"
                   onClick={() => {
                     setPhysicalConditionButtonClicked(true);
                   }}
@@ -644,7 +651,7 @@ const SellPhone: React.FC = () => {
 
           {physicalConditionButtonClicked &&
             !functionalConditionButtonClicked && (
-              <div className="w-[65%] h-full border-2 rounded-lg p-4">
+              <div className="w-full md:w-[65%] h-full border-2 rounded-lg p-4">
                 <h4 className="text-base text-center">
                   Functional Or Physical Problems
                 </h4>
@@ -652,7 +659,7 @@ const SellPhone: React.FC = () => {
                   Please choose appropriate condition to get accurate quote
                 </p>
 
-                <div className="flex items-start justify-between">
+                <div className="flex flex-col md:flex-row items-start justify-between">
                   <div className="flex flex-col items-start gap-4 mt-8">
                     {DEVICE_INFO.functionalCondition
                       .slice(0, 9)
@@ -723,7 +730,7 @@ const SellPhone: React.FC = () => {
 
                 <div className="w-full flex items-center justify-center">
                   <Button
-                    className="mt-4 w-[25%] bg-green-500 text-white hover:bg-green-400 font-semibold text-lg disabled:bg-gray-400 mx-auto"
+                    className="mt-4 md:w-[25%] bg-green-500 text-white hover:bg-green-400 font-semibold text-lg disabled:bg-gray-400 mx-auto"
                     onClick={() => {
                       setFunctionalConditionButtonClicked(true);
                     }}
@@ -735,7 +742,7 @@ const SellPhone: React.FC = () => {
             )}
 
           {functionalConditionButtonClicked && !accessoriesButtonClicked && (
-            <div className="w-[65%] h-full border-2 rounded-lg p-4">
+            <div className="w-full md:w-[65%] h-full border-2 rounded-lg p-4">
               <h4 className="text-base text-center">
                 Do you have the following?
               </h4>
@@ -771,7 +778,7 @@ const SellPhone: React.FC = () => {
                 ))}
 
                 <Button
-                  className="mt-[5.5rem] w-[25%] bg-green-500 text-white hover:bg-green-400 font-semibold text-lg disabled:bg-gray-400 mx-auto"
+                  className="md:mt-[5.5rem] md:w-[25%] bg-green-500 text-white hover:bg-green-400 font-semibold text-lg disabled:bg-gray-400 mx-auto"
                   onClick={() => {
                     setAccessoriesButtonClicked(true);
                   }}
@@ -785,8 +792,8 @@ const SellPhone: React.FC = () => {
       )}
 
       {accessoriesButtonClicked && (
-        <div className="mx-auto max-w-6xl w-full">
-          <div className="w-full mx-auto max-w-6xl border-2 shadow-md rounded-lg py-3">
+        <div className="mx-auto max-w-6xl w-full px-2 2xl:px-0">
+          <div className="w-full mx-auto max-w-6xl border-2 shadow-md rounded-lg py-3 px-3 md:px-0">
             <div className="flex flex-col items-center justify-center">
               <h4 className="text-lg font-semibold">Apple iPhone 13</h4>
               <Image
@@ -795,7 +802,9 @@ const SellPhone: React.FC = () => {
                 width={250}
                 height={250}
               />
-              <p>You can sell your iPhone 13 at a best price rate of</p>
+              <p className="text-center">
+                You can sell your iPhone 13 at a best price rate of
+              </p>
 
               <div className="mx-auto bg-black border-[0.8px] border-black rounded-full w-[40%] my-2" />
 
