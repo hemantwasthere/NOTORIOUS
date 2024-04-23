@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Services: React.FC = () => {
   return (
-    <div className="mt-16 mx-auto max-w-7xl w-full px-3 2xl:px-0">
+    <div className="mt-10 mx-auto max-w-7xl w-full px-3 2xl:px-0">
       <h3 className="font-semibold uppercase text-lg my-3">Our Services</h3>
 
       <div className="flex flex-wrap items-center justify-center sm:flex-nowrap sm:items-start sm:justify-normal gap-6">

@@ -1,17 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
-
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import Link from "next/link";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 interface HeroProps {
   isBannerVisible?: boolean;
@@ -35,7 +30,7 @@ const Hero: React.FC<HeroProps> = ({ isBannerVisible = true }) => {
 
           <Link
             href="/sell-phone"
-            className="h-fit w-fit flex flex-col items-center justify-center"
+            className="h-fit w-fit flex flex-col items-center justify-center hover:scale-125 transition-all"
           >
             <Image src="/sellphone.svg" alt="logo" width={80} height={80} />
             Sell phone
@@ -69,56 +64,59 @@ const Hero: React.FC<HeroProps> = ({ isBannerVisible = true }) => {
       </div>
 
       {isBannerVisible && (
-        <Carousel
-          opts={{
-            loop: true,
-          }}
-          plugins={[
-            Autoplay({
-              delay: 2000,
-            }),
-          ]}
+        <Swiper
+          navigation={true}
+          modules={[Navigation]}
+          className="select-none"
         >
-          <CarouselContent className="w-full sm:h-[300px] rounded-md mt-4">
-            <CarouselItem className="pl-8">
-              <img
-                src="/banner.svg"
-                className="object-cover rounded-md"
-                alt="banner"
-              />
-            </CarouselItem>
-            <CarouselItem className="pl-8">
-              <img
-                src="/banner2.svg"
-                className="object-cover rounded-md"
-                alt="banner"
-              />
-            </CarouselItem>
-            <CarouselItem className="pl-8">
-              <img
-                src="/banner3.svg"
-                className="object-cover rounded-md"
-                alt="banner"
-              />
-            </CarouselItem>
-            <CarouselItem className="pl-8">
-              <img
-                src="/banner4.svg"
-                className="object-cover rounded-md"
-                alt="banner"
-              />
-            </CarouselItem>
-            <CarouselItem className="pl-8">
-              <img
-                src="/banner5.svg"
-                className="object-cover rounded-md"
-                alt="banner"
-              />
-            </CarouselItem>
-          </CarouselContent>
-          <CarouselPrevious className="h-12 w-12 -left-4 hidden md:flex" />
-          <CarouselNext className="h-12 w-12 -right-4 hidden md:flex" />
-        </Carousel>
+          <SwiperSlide>
+            <img
+              src="/banner.svg"
+              className="w-full object-cover rounded-lg"
+              alt="banner"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              src="/banner2.svg"
+              className="w-full object-cover rounded-lg"
+              alt="banner"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              src="/banner3.svg"
+              className="w-full object-cover rounded-lg"
+              alt="banner"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              src="/banner4.svg"
+              className="w-full object-cover rounded-lg"
+              alt="banner"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              src="/banner5.svg"
+              className="w-full object-cover rounded-lg"
+              alt="banner"
+            />
+          </SwiperSlide>
+          {/* <Button
+            onClick={() => swiper.slidePrev()}
+            className="h-12 w-12 -left-4 hidden md:flex"
+          >
+            <ChevronLeft />
+          </Button>
+          <Button
+            onClick={() => swiper.slideNext()}
+            className="h-12 w-12 -right-4 hidden md:flex"
+          >
+            <ChevronRight />
+          </Button> */}
+        </Swiper>
       )}
     </section>
   );

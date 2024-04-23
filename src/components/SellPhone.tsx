@@ -332,7 +332,7 @@ const SellPhone: React.FC = () => {
 
               <div className="flex flex-wrap sm:flex-nowrap items-center justify-start gap-3 w-full">
                 <Image
-                  onClick={() => setSelectSeries("apple")}
+                  onClick={() => setSelectBrand("apple")}
                   className="cursor-pointer"
                   src="/apple.svg"
                   alt="apple"
@@ -417,7 +417,7 @@ const SellPhone: React.FC = () => {
               (series, i) => (
                 <Button
                   key={i}
-                  className="border-2 bg-transparent hover:bg-gray-200 hover:shadow-none text-gray-800 rounded-lg px-5 py-3 w-[12rem] transition-all shadow-md"
+                  className="border-2 bg-transparent hover:bg-amber-400 hover:border-amber-400 hover:shadow-none text-gray-800 rounded-lg px-5 py-3 w-[12rem] transition-all shadow-md"
                   onClick={() => {
                     setSelectSeries(series.name);
                   }}
@@ -451,7 +451,8 @@ const SellPhone: React.FC = () => {
                   className={cn(
                     "border-2 bg-transparent hover:bg-gray-200 hover:shadow-none text-gray-800 rounded-lg px-5 py-3 w-full transition-all shadow-md",
                     {
-                      "bg-gray-200": selectVariant === "128 GB",
+                      "bg-amber-400 border-amber-400 hover:bg-amber-400":
+                        selectVariant === "128 GB",
                     }
                   )}
                   onClick={() => {
@@ -465,7 +466,8 @@ const SellPhone: React.FC = () => {
                   className={cn(
                     "border-2 bg-transparent hover:bg-gray-200 hover:shadow-none text-gray-800 rounded-lg px-5 py-3 w-full transition-all shadow-md",
                     {
-                      "bg-gray-200": selectVariant === "256 GB",
+                      "bg-amber-400 border-amber-400 hover:bg-amber-400":
+                        selectVariant === "256 GB",
                     }
                   )}
                   onClick={() => {
@@ -479,7 +481,8 @@ const SellPhone: React.FC = () => {
                   className={cn(
                     "border-2 bg-transparent hover:bg-gray-200 hover:shadow-none text-gray-800 rounded-lg px-5 py-3 w-full transition-all shadow-md",
                     {
-                      "bg-gray-200": selectVariant === "512 GB",
+                      "bg-amber-400 border-amber-400 hover:bg-amber-400":
+                        selectVariant === "512 GB",
                     }
                   )}
                   onClick={() => {
@@ -554,7 +557,8 @@ const SellPhone: React.FC = () => {
                         className={cn(
                           "border-2 bg-transparent hover:bg-gray-200 hover:shadow-none text-gray-800 rounded-lg px-5 py-3 w-[12rem] transition-all shadow-md",
                           {
-                            "bg-gray-200": normalConditionAnswers[i],
+                            "bg-amber-400 border-amber-400 hover:bg-amber-400":
+                              normalConditionAnswers[i],
                           }
                         )}
                         onClick={() => {
@@ -572,7 +576,8 @@ const SellPhone: React.FC = () => {
                         className={cn(
                           "border-2 bg-transparent hover:bg-gray-200 hover:shadow-none text-gray-800 rounded-lg px-5 py-3 w-[12rem] transition-all shadow-md",
                           {
-                            "bg-gray-200": !normalConditionAnswers[i],
+                            "bg-amber-400 border-amber-400 hover:bg-amber-400":
+                              !normalConditionAnswers[i],
                           }
                         )}
                         onClick={() => {
@@ -618,7 +623,8 @@ const SellPhone: React.FC = () => {
                       className={cn(
                         "border-2 bg-transparent hover:bg-gray-200 hover:shadow-none text-gray-800 rounded-lg px-5 py-3 w-[20rem] transition-all shadow-md",
                         {
-                          "bg-gray-200": physicalConditionAnswers[i],
+                          "bg-amber-400 border-amber-400 hover:bg-amber-400":
+                            physicalConditionAnswers[i],
                         }
                       )}
                       onClick={() => {
@@ -672,7 +678,8 @@ const SellPhone: React.FC = () => {
                             className={cn(
                               "border-2 bg-transparent hover:bg-gray-200 hover:shadow-none text-gray-800 rounded-lg px-5 py-3 w-[20rem] transition-all shadow-md",
                               {
-                                "bg-gray-200": functionalConditionAnswers[i],
+                                "bg-amber-400 border-amber-400 hover:bg-amber-400":
+                                  functionalConditionAnswers[i],
                               }
                             )}
                             onClick={() => {
@@ -705,7 +712,7 @@ const SellPhone: React.FC = () => {
                             className={cn(
                               "border-2 bg-transparent hover:bg-gray-200 hover:shadow-none text-gray-800 rounded-lg px-5 py-3 w-[20rem] transition-all shadow-md",
                               {
-                                "bg-gray-200":
+                                "bg-amber-400 border-amber-400 hover:bg-amber-400":
                                   functionalConditionAnswers[i + 9],
                               }
                             )}
@@ -757,7 +764,8 @@ const SellPhone: React.FC = () => {
                       className={cn(
                         "border-2 bg-transparent hover:bg-gray-200 hover:shadow-none text-gray-800 rounded-lg px-5 py-3 w-[20rem] transition-all shadow-md",
                         {
-                          "bg-gray-200": accessoriesAnswers[i],
+                          "bg-amber-400 border-amber-400 hover:bg-amber-400":
+                            accessoriesAnswers[i],
                         }
                       )}
                       onClick={() => {
