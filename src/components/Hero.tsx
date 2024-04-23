@@ -19,7 +19,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ isBannerVisible = true }) => {
   return (
-    <section className="mx-auto max-w-6xl w-full">
+    <section className="mx-auto max-w-7xl w-full">
       <div className="flex flex-wrap sm:flex-nowrap items-center sm:justify-between py-4 px-8 gap-6 sm:gap-0">
         <div className="flex flex-wrap sm:flex-nowrap items-center justify-center sm:justify-normal gap-6 sm:gap-16">
           <div className="flex flex-col items-center justify-center h-full">

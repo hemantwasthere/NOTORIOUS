@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Works: React.FC = () => {
   return (
-    <div className="mt-24 mx-auto max-w-6xl w-full">
+    <div className="mt-24 mx-auto max-w-7xl w-full">
       <h3 className="text-center text-2xl font-semibold">How It&apos;s Work</h3>
       <div className="mx-auto bg-black border-[0.8px] border-black rounded-full w-[30%] mt-2" />
 

@@ -2,7 +2,7 @@ import React from "react";
 
 const Bottom: React.FC = () => {
   return (
-    <div className="mt-16 p-4 rounded-lg bg-gray-300 mx-auto w-full max-w-6xl flex flex-col md:flex-row items-center justify-between h-full md:h-80">
+    <div className="mt-16 p-4 rounded-lg bg-gray-300 mx-auto w-full max-w-7xl flex flex-col md:flex-row items-center justify-between h-full md:h-80">
       <div className="text-center px-4 md:w-3/5">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur
         necessitatibus cum, magni laboriosam delectus at quibusdam, provident
