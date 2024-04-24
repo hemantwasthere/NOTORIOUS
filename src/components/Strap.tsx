@@ -1,86 +1,90 @@
 "use client";
 
+import "keen-slider/keen-slider.min.css";
+import { useKeenSlider } from "keen-slider/react";
 import Image from "next/image";
-import { Autoplay } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
 
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+const animation = { duration: 5000, easing: (t: number) => t };
 
 const Strap: React.FC = () => {
+  const [ref] = useKeenSlider<HTMLDivElement>({
+    loop: true,
+    // mode: "free",
+    slides: {
+      perView: 7,
+      spacing: 15,
+    },
+    renderMode: "performance",
+    drag: false,
+    created(s) {
+      s.moveToIdx(5, true, animation);
+    },
+    updated(s) {
+      s.moveToIdx(s.track.details.abs + 5, true, animation);
+    },
+    animationEnded(s) {
+      s.moveToIdx(s.track.details.abs + 5, true, animation);
+    },
+  });
+
   return (
-    <Swiper
-      modules={[Autoplay]}
-      slidesPerView={7}
-      spaceBetween={20}
-      className="mt-32 select-none"
-      loop={true}
-      autoplay={{
-        delay: 1000,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: false,
-        stopOnLastSlide: false,
-        waitForTransition: true,
-      }}
-      effect="slide"
-    >
-      <SwiperSlide>
+    <div ref={ref} className="keen-slider mt-10">
+      <div className="keen-slider__slide number-slide1">
         <Image src="realme.svg" width={120} height={120} alt="realme" />
-      </SwiperSlide>
+      </div>
 
-      <SwiperSlide>
+      <div className="keen-slider__slide number-slide2">
         <Image src="google.svg" width={120} height={120} alt="google" />
-      </SwiperSlide>
+      </div>
 
-      <SwiperSlide>
+      <div className="keen-slider__slide number-slide3">
         <Image src="poco.svg" width={120} height={120} alt="poco" />
-      </SwiperSlide>
+      </div>
 
-      <SwiperSlide>
+      <div className="keen-slider__slide number-slide4">
         <Image src="lenovo.svg" width={120} height={120} alt="lenovo" />
-      </SwiperSlide>
+      </div>
 
-      <SwiperSlide>
+      <div className="keen-slider__slide number-slide5">
         <Image src="infinix.svg" width={120} height={120} alt="infinix" />
-      </SwiperSlide>
+      </div>
 
-      <SwiperSlide>
+      <div className="keen-slider__slide number-slide6">
         <Image src="iqoo.svg" width={120} height={120} alt="iqoo" />
-      </SwiperSlide>
+      </div>
 
-      <SwiperSlide>
+      <div className="keen-slider__slide number-slide7">
         <Image src="honor.svg" width={120} height={120} alt="honor" />
-      </SwiperSlide>
+      </div>
 
-      <SwiperSlide>
+      <div className="keen-slider__slide number-slide8">
         <Image src="techno.svg" width={120} height={120} alt="techno" />
-      </SwiperSlide>
+      </div>
 
-      <SwiperSlide>
+      <div className="keen-slider__slide number-slide9">
         <Image src="nokia.svg" width={120} height={120} alt="nokia" />
-      </SwiperSlide>
+      </div>
 
-      <SwiperSlide>
+      <div className="keen-slider__slide number-slide10">
         <Image src="motorola.svg" width={120} height={120} alt="motorola" />
-      </SwiperSlide>
+      </div>
 
-      <SwiperSlide>
+      <div className="keen-slider__slide number-slide11">
         <Image src="samsung.svg" width={120} height={120} alt="samsung" />
-      </SwiperSlide>
+      </div>
 
-      <SwiperSlide>
+      <div className="keen-slider__slide number-slide12">
         <Image src="oneplus.svg" width={120} height={120} alt="oneplus" />
-      </SwiperSlide>
+      </div>
 
-      <SwiperSlide>
+      <div className="keen-slider__slide number-slide13">
         <Image src="mi.svg" width={120} height={120} alt="mi" />
-      </SwiperSlide>
+      </div>
 
-      <SwiperSlide>
+      <div className="keen-slider__slide number-slide14">
         <Image src="oppo.svg" width={120} height={120} alt="oppo" />
-      </SwiperSlide>
-    </Swiper>
+      </div>
+    </div>
   );
 };
 
