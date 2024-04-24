@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import Image from "next/image";
@@ -18,10 +19,12 @@ const BRANDS = [
           {
             name: "SE 2020",
             variants: ["128 GB", "256 GB", "512 GB"],
+            img: "/iphone_se_2020.svg",
           },
           {
             name: "SE 2021",
             variants: ["128 GB", "256 GB", "512 GB"],
+            img: "/iphone_se_2022.svg",
           },
         ],
       },
@@ -31,10 +34,12 @@ const BRANDS = [
           {
             name: "6",
             variants: ["128 GB", "256 GB", "512 GB"],
+            img: "/iphone6.svg",
           },
           {
             name: "6 Plus",
             variants: ["128 GB", "256 GB", "512 GB"],
+            img: "/iphone6.svg",
           },
         ],
       },
@@ -44,10 +49,12 @@ const BRANDS = [
           {
             name: "7",
             variants: ["128 GB", "256 GB", "512 GB"],
+            img: "/iphone7.svg",
           },
           {
             name: "7 Plus",
             variants: ["128 GB", "256 GB", "512 GB"],
+            img: "/iphone7.svg",
           },
         ],
       },
@@ -57,10 +64,12 @@ const BRANDS = [
           {
             name: "8",
             variants: ["128 GB", "256 GB", "512 GB"],
+            img: "/iphone8.svg",
           },
           {
             name: "8 Plus",
             variants: ["128 GB", "256 GB", "512 GB"],
+            img: "/iphone8.svg",
           },
         ],
       },
@@ -70,10 +79,12 @@ const BRANDS = [
           {
             name: "X",
             variants: ["128 GB", "256 GB", "512 GB"],
+            img: "/iphonex.svg",
           },
           {
             name: "X Plus",
             variants: ["128 GB", "256 GB", "512 GB"],
+            img: "/iphonex.svg",
           },
         ],
       },
@@ -83,14 +94,17 @@ const BRANDS = [
           {
             name: "11",
             variants: ["128 GB", "256 GB", "512 GB"],
+            img: "/iphone11.svg",
           },
           {
             name: "11 Pro",
             variants: ["128 GB", "256 GB", "512 GB"],
+            img: "/iphone11.svg",
           },
           {
             name: "11 Pro Max",
             variants: ["128 GB", "256 GB", "512 GB"],
+            img: "/iphone11.svg",
           },
         ],
       },
@@ -100,14 +114,17 @@ const BRANDS = [
           {
             name: "12",
             variants: ["128 GB", "256 GB", "512 GB"],
+            img: "/iphone12.svg",
           },
           {
             name: "12 Pro",
             variants: ["128 GB", "256 GB", "512 GB"],
+            img: "/iphone12.svg",
           },
           {
             name: "12 Pro Max",
             variants: ["128 GB", "256 GB", "512 GB"],
+            img: "/iphone12.svg",
           },
         ],
       },
@@ -117,14 +134,17 @@ const BRANDS = [
           {
             name: "13",
             variants: ["128 GB", "256 GB", "512 GB"],
+            img: "/iphone13.svg",
           },
           {
             name: "13 Pro",
             variants: ["128 GB", "256 GB", "512 GB"],
+            img: "/iphone13.svg",
           },
           {
             name: "13 Pro Max",
             variants: ["128 GB", "256 GB", "512 GB"],
+            img: "/iphone13.svg",
           },
         ],
       },
@@ -134,14 +154,17 @@ const BRANDS = [
           {
             name: "14",
             variants: ["128 GB", "256 GB", "512 GB"],
+            img: "/iphone14.svg",
           },
           {
             name: "14 Pro",
             variants: ["128 GB", "256 GB", "512 GB"],
+            img: "/iphone14.svg",
           },
           {
             name: "14 Pro Max",
             variants: ["128 GB", "256 GB", "512 GB"],
+            img: "/iphone14.svg",
           },
         ],
       },
@@ -151,14 +174,17 @@ const BRANDS = [
           {
             name: "15",
             variants: ["128 GB", "256 GB", "512 GB"],
+            img: "/iphone15.svg",
           },
           {
             name: "15 Pro",
             variants: ["128 GB", "256 GB", "512 GB"],
+            img: "/iphone15.svg",
           },
           {
             name: "15 Pro Max",
             variants: ["128 GB", "256 GB", "512 GB"],
+            img: "/iphone15.svg",
           },
         ],
       },
@@ -425,6 +451,30 @@ const SellPhone: React.FC = () => {
                   {series.name}
                 </Button>
               )
+            )}
+          </div>
+
+          <h3 className="text-2xl font-semibold mt-5">Select Models</h3>
+
+          <div className="mt-5 flex flex-wrap items-center justify-center sm:justify-start gap-y-3 gap-x-6 sm:gap-y-6 sm:gap-x-12 w-full">
+            {BRANDS.find((brand) => brand.name === selectBrand)?.series?.map(
+              (series, i) =>
+                series.models.map((model, j) => (
+                  <div
+                    key={j}
+                    className="border-2 bg-transparent hover:bg-amber-400 hover:border-amber-400 hover:shadow-none text-gray-800 rounded-lg px-5 py-3 w-[12rem] transition-all shadow-md flex justify-center items-center"
+                    // onClick={() => {
+                    //   setSelectSeries(model.name);
+                    // }}
+                  >
+                    <img
+                      src={model.img}
+                      alt={model.name}
+                      height={200}
+                      width={200}
+                    />
+                  </div>
+                ))
             )}
           </div>
         </div>
