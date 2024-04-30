@@ -4,7 +4,7 @@ import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import Image from "next/image";
 
-const animation = { duration: 5000, easing: (t: number) => t };
+const animation = { duration: 8000, easing: (t: number) => t };
 
 const Strap: React.FC = () => {
   const [ref] = useKeenSlider<HTMLDivElement>({
@@ -28,7 +28,7 @@ const Strap: React.FC = () => {
   });
 
   return (
-    <div ref={ref} className="keen-slider mt-10">
+    <div ref={ref} className="keen-slider mt-12">
       <div className="keen-slider__slide number-slide1">
         <Image src="realme.svg" width={120} height={120} alt="realme" />
       </div>

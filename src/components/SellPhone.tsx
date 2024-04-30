@@ -334,7 +334,7 @@ const SellPhone: React.FC = () => {
     useState(false);
 
   return (
-    <div className="py-8 border-y border-t-black w-full">
+    <div className="py-8 border-b w-full">
       {!moreBrands && !selectBrand && !selectSeries ? (
         <div className="w-full mx-auto max-w-7xl border-2 rounded-lg px-6 pt-12 pb-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
