@@ -120,13 +120,13 @@ const Hero: React.FC<HeroProps> = ({ isBannerVisible = true }) => {
 
             <Button
               onClick={handlePrev}
-              className="absolute top-[45%] p-0 z-10 -left-6 h-12 w-12 rounded-full bg-white text-black/60 shadow-md hover:bg-gray-200 border backdrop-blur-xl"
+              className="absolute top-[45%] p-0 z-10 -left-6 h-12 w-12 rounded-full bg-white text-black/60 shadow-md hover:bg-gray-200 border backdrop-blur-3xl bg-white/75"
             >
               <ChevronLeft size={30} />
             </Button>
             <Button
               onClick={handleNext}
-              className="absolute top-[45%] p-0 z-10 -right-6 h-12 w-12 rounded-full bg-white text-black/60 shadow-md hover:bg-gray-200 border backdrop-blur-xl"
+              className="absolute top-[45%] p-0 z-10 -right-6 h-12 w-12 rounded-full bg-white text-black/60 shadow-md hover:bg-gray-200 border backdrop-blur-3xl bg-white/75"
             >
               <ChevronRight size={30} />
             </Button>
