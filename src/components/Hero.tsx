@@ -7,8 +7,9 @@ import Link from "next/link";
 import { useCallback, useRef } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+
 import { Button } from "./ui/button";
 
 interface HeroProps {
@@ -74,11 +75,11 @@ const Hero: React.FC<HeroProps> = ({ isBannerVisible = true }) => {
           <>
             <Swiper
               navigation={false}
-              modules={[Navigation]}
+              modules={[Autoplay, Navigation]}
               className="select-none"
               ref={sliderRef}
-              loop
-              autoplay={{ delay: 5000 }}
+              loop={true}
+              autoplay={{ delay: 2000 }}
             >
               <SwiperSlide>
                 <img
