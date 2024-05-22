@@ -32,7 +32,7 @@ const Review = () => {
       </h3>
 
       <div ref={ref} className="keen-slider mt-8 py-8 px-4">
-        <div className="keen-slider__slide number-slide1 bg-gray-200 rounded-xl shadow-xl p-4 !w-[200px] md:!w-[300px] !max-w-none">
+        <div className="keen-slider__slide number-slide1 bg-[#FFFCE3] rounded-xl shadow-xl p-4 !w-[200px] md:!w-[300px] !max-w-none">
           <div className="flex items-center gap-3">
             <img
               src="user.svg"
@@ -49,7 +49,7 @@ const Review = () => {
           </p>
         </div>
 
-        <div className="keen-slider__slide number-slide2 bg-gray-200 rounded-xl shadow-xl p-4 !w-[200px] md:!w-[300px] !max-w-none">
+        <div className="keen-slider__slide number-slide2 bg-[#FFFCE3] rounded-xl shadow-xl p-4 !w-[200px] md:!w-[300px] !max-w-none">
           <div className="flex items-center gap-3">
             <img
               src="user.svg"
@@ -66,7 +66,7 @@ const Review = () => {
           </p>
         </div>
 
-        <div className="keen-slider__slide number-slide3 bg-gray-200 rounded-xl shadow-xl p-4 !w-[200px] md:!w-[300px] !max-w-none">
+        <div className="keen-slider__slide number-slide3 bg-[#FFFCE3] rounded-xl shadow-xl p-4 !w-[200px] md:!w-[300px] !max-w-none">
           <div className="flex items-center gap-3">
             <img
               src="user.svg"
@@ -83,7 +83,7 @@ const Review = () => {
           </p>
         </div>
 
-        <div className="keen-slider__slide number-slide4 bg-gray-200 rounded-xl shadow-xl p-4 !w-[200px] md:!w-[300px] !max-w-none">
+        <div className="keen-slider__slide number-slide4 bg-[#FFFCE3] rounded-xl shadow-xl p-4 !w-[200px] md:!w-[300px] !max-w-none">
           <div className="flex items-center gap-3">
             <img
               src="user.svg"
@@ -100,7 +100,7 @@ const Review = () => {
           </p>
         </div>
 
-        <div className="keen-slider__slide number-slide4 bg-gray-200 rounded-xl shadow-xl p-4 !w-[200px] md:!w-[300px] !max-w-none">
+        <div className="keen-slider__slide number-slide4 bg-[#FFFCE3] rounded-xl shadow-xl p-4 !w-[200px] md:!w-[300px] !max-w-none">
           <div className="flex items-center gap-3">
             <img
               src="user.svg"
@@ -117,7 +117,7 @@ const Review = () => {
           </p>
         </div>
 
-        <div className="keen-slider__slide number-slide4 bg-gray-200 rounded-xl shadow-xl p-4 !w-[200px] md:!w-[300px] !max-w-none">
+        <div className="keen-slider__slide number-slide4 bg-[#FFFCE3] rounded-xl shadow-xl p-4 !w-[200px] md:!w-[300px] !max-w-none">
           <div className="flex items-center gap-3">
             <img
               src="user.svg"

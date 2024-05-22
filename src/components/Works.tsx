@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Works: React.FC = () => {
   return (
-    <section className="bg-gray-200 pb-6 pt-5 mt-12">
+    <section className="bg-[#FFFCE3] pb-6 pt-5 mt-12">
       <div className="mx-auto max-w-7xl w-full">
         <h3 className="text-center text-2xl font-semibold">
           How It&apos;s Work

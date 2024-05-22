@@ -1,7 +1,7 @@
 const Footer: React.FC = () => {
   return (
     <div>
-      <footer className="mt-10 bg-gray-300">
+      <footer className="mt-10 bg-[#FFFCE3]">
         <div className="mx-auto w-full max-w-7xl">
           <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
             <div>
