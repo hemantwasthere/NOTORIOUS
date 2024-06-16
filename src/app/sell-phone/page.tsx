@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import SellPhone from "@/components/SellPhone";
 import Strap from "@/components/Strap";
+import Text from "@/components/Text";
 import Works from "@/components/Works";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <Strap />
       <Bottom />
       <FAQ />
+      <Text />
       <Footer />
     </main>
   );

@@ -7,7 +7,7 @@ import { Input } from "./ui/input";
 
 const Navbar: React.FC = () => {
   return (
-    <header className="py-2 px-3 border-b border-gray-400">
+    <header className="py-4 px-3 border-b border-gray-400">
       <div className="max-w-7xl mx-auto w-full flex items-center justify-between gap-2 sm:gap-5">
         <Link href="/">
           <Image src="/soldold.svg" alt="logo" width={200} height={47} />

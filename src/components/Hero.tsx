@@ -30,42 +30,50 @@ const Hero: React.FC<HeroProps> = ({ isBannerVisible = true }) => {
   }, []);
 
   return (
-    <section className="">
-      <div className="mx-auto max-w-7xl w-full relative flex flex-wrap sm:flex-nowrap items-center sm:justify-between py-4 px-2 gap-6 sm:gap-0 mb-4">
+    <section>
+      <div className="mx-auto max-w-7xl w-full relative flex flex-wrap sm:flex-nowrap items-center sm:justify-between py-4 px-2 gap-6 sm:gap-0">
         <div className="flex flex-wrap sm:flex-nowrap items-center justify-center sm:justify-normal gap-6 sm:gap-16">
           <Link
-            href="/sell-phone"
-            className="h-fit w-fit flex flex-col items-center justify-center hover:scale-125 transition-all"
+            href="/"
+            className="flex flex-col items-center justify-center hover:text-amber-500 transition-all"
           >
-            <Image src="/sellphone.svg" alt="logo" width={80} height={80} />
+            Home
+          </Link>
+
+          <Link
+            href="/sell-phone"
+            className="flex flex-col items-center justify-center hover:text-amber-500 transition-all"
+          >
             Sell phone
           </Link>
 
-          <div className="flex flex-col items-center justify-center">
-            <Image src="/buyphone.svg" alt="logo" width={80} height={80} />
+          <Link
+            href="#"
+            className="flex flex-col items-center justify-center hover:text-amber-500 transition-all"
+          >
             Buy phone
-          </div>
+          </Link>
 
-          <div className="flex flex-col items-center justify-center">
-            <Image src="/sellgadget.svg" alt="logo" width={80} height={80} />
+          <Link
+            href="#"
+            className="flex flex-col items-center justify-center hover:text-amber-500 transition-all"
+          >
             Sell Gadget
-          </div>
+          </Link>
 
-          <div className="flex flex-col items-center justify-center">
-            <Image src="/b2b.svg" alt="logo" width={80} height={80} />
+          <Link
+            href="#"
+            className="flex flex-col items-center justify-center hover:text-amber-500 transition-all"
+          >
             B2B
-          </div>
+          </Link>
 
-          <div className="flex md:hidden flex-col items-center justify-center">
-            <Image src="/selectcity.svg" alt="logo" width={76} height={76} />
+          <div className="cursor-pointer flex md:hidden flex-col items-center justify-center">
             Select City
           </div>
         </div>
 
-        <div className="hidden md:flex flex-col items-center ">
-          <Image src="/selectcity.svg" alt="logo" width={76} height={76} />
-          Select City
-        </div>
+        <div className="hidden md:flex flex-col items-center ">Select City</div>
       </div>
 
       <div className="w-full border-b border-gray-400 h-[.5px] rounded-md mb-4" />

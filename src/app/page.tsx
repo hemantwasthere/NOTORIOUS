@@ -5,6 +5,7 @@ import Hero from "@/components/Hero";
 import Review from "@/components/Review";
 import Services from "@/components/Services";
 import Strap from "@/components/Strap";
+import Text from "@/components/Text";
 import Works from "@/components/Works";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       {/* <Bottom /> */}
       <Review />
       <FAQ />
+      <Text />
       <Footer />
     </main>
   );

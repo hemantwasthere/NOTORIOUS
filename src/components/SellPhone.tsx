@@ -366,18 +366,29 @@ const SellPhone: React.FC = () => {
                   height={100}
                 />
                 <Image
+                  onClick={() => setSelectBrand("apple")}
+                  className="cursor-pointer"
                   src="/samsung2.svg"
                   alt="samsung2"
                   width={100}
                   height={100}
                 />
                 <Image
+                  onClick={() => setSelectBrand("apple")}
+                  className="cursor-pointer"
                   src="/oneplus2.svg"
                   alt="oneplus2"
                   width={100}
                   height={100}
                 />
-                <Image src="/vivo2.svg" alt="vivo2" width={100} height={100} />
+                <Image
+                  onClick={() => setSelectBrand("apple")}
+                  className="cursor-pointer"
+                  src="/vivo2.svg"
+                  alt="vivo2"
+                  width={100}
+                  height={100}
+                />
 
                 <button
                   className="underline cursor-pointer"
@@ -462,12 +473,13 @@ const SellPhone: React.FC = () => {
                 series.models.map((model, j) => (
                   <div
                     key={j}
-                    className="border-2 bg-transparent hover:bg-amber-400 hover:border-amber-400 hover:shadow-none text-gray-800 rounded-lg px-5 py-3 w-[12rem] transition-all shadow-md flex justify-center items-center"
+                    className="border-2 bg-transparent group text-gray-800 rounded-lg px-5 py-3 w-[12rem] transition-all shadow-md flex justify-center items-center"
                     // onClick={() => {
                     //   setSelectSeries(model.name);
                     // }}
                   >
                     <img
+                      className="group-hover:scale-[1.1] transition-all"
                       src={model.img}
                       alt={model.name}
                       height={200}
