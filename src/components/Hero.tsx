@@ -73,7 +73,9 @@ const Hero: React.FC<HeroProps> = ({ isBannerVisible = true }) => {
           </div>
         </div>
 
-        <div className="hidden md:flex flex-col items-center ">Select City</div>
+        <div className="hidden md:flex flex-col items-center cursor-pointer">
+          Select City
+        </div>
       </div>
 
       <div className="w-full border-b border-gray-400 h-[.5px] rounded-md mb-4" />
