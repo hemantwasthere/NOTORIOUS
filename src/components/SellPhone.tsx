@@ -359,7 +359,7 @@ const SellPhone: React.FC = () => {
               <div className="flex flex-wrap sm:flex-nowrap items-center justify-start gap-3 w-full">
                 <Image
                   onClick={() => setSelectBrand("apple")}
-                  className="cursor-pointer"
+                  className="cursor-pointer hover:scale-[1.1] transition-all"
                   src="/apple.svg"
                   alt="apple"
                   width={100}
@@ -367,7 +367,7 @@ const SellPhone: React.FC = () => {
                 />
                 <Image
                   onClick={() => setSelectBrand("apple")}
-                  className="cursor-pointer"
+                  className="cursor-pointer hover:scale-[1.1] transition-all"
                   src="/samsung2.svg"
                   alt="samsung2"
                   width={100}
@@ -375,7 +375,7 @@ const SellPhone: React.FC = () => {
                 />
                 <Image
                   onClick={() => setSelectBrand("apple")}
-                  className="cursor-pointer"
+                  className="cursor-pointer hover:scale-[1.1] transition-all"
                   src="/oneplus2.svg"
                   alt="oneplus2"
                   width={100}
@@ -383,7 +383,7 @@ const SellPhone: React.FC = () => {
                 />
                 <Image
                   onClick={() => setSelectBrand("apple")}
-                  className="cursor-pointer"
+                  className="cursor-pointer hover:scale-[1.1] transition-all"
                   src="/vivo2.svg"
                   alt="vivo2"
                   width={100}
@@ -427,7 +427,7 @@ const SellPhone: React.FC = () => {
               {BRANDS.map((brand) => (
                 <Image
                   key={brand.name}
-                  className="cursor-pointer"
+                  className="cursor-pointer hover:scale-[1.1] transition-all"
                   onClick={() => {
                     brand.series && setSelectBrand(brand.name);
                   }}
