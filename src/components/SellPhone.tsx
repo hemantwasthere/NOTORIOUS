@@ -454,7 +454,7 @@ const SellPhone: React.FC = () => {
               (series, i) => (
                 <Button
                   key={i}
-                  className="border-2 bg-transparent hover:bg-amber-400 hover:border-amber-400 hover:shadow-none text-gray-800 rounded-lg px-5 py-3 w-[12rem] transition-all shadow-md"
+                  className="border-2 bg-transparent hover:bg-transparent hover:shadow-none text-gray-800 rounded-lg px-5 py-3 w-[12rem] transition-all shadow-md"
                   onClick={() => {
                     setSelectSeries(series.name);
                   }}
