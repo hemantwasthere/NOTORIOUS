@@ -6,8 +6,9 @@ const Services: React.FC = () => {
       <h3 className="font-semibold uppercase text-lg my-3">Our Services</h3>
 
       <div className="flex flex-wrap items-center justify-center sm:flex-nowrap sm:items-start sm:justify-normal gap-6">
-        <div className="flex flex-col justify-items-center gap-2 text-center w-fit">
+        <div className="group cursor-pointer flex flex-col justify-items-center gap-2 text-center w-fit">
           <Image
+            className="group-hover:scale-110 transition-all"
             src="/services_sell_phone.svg"
             alt="Sell Phone"
             width={150}
@@ -16,8 +17,9 @@ const Services: React.FC = () => {
           Sell Phone
         </div>
 
-        <div className="flex flex-col justify-items-center gap-2 text-center w-fit">
+        <div className="group cursor-pointer flex flex-col justify-items-center gap-2 text-center w-fit">
           <Image
+            className="group-hover:scale-110 transition-all"
             src="/selltablet.svg"
             alt="Sell Tablet"
             width={150}
@@ -26,8 +28,9 @@ const Services: React.FC = () => {
           Sell Tablet
         </div>
 
-        <div className="flex flex-col justify-items-center gap-2 text-center w-fit">
+        <div className="group cursor-pointer flex flex-col justify-items-center gap-2 text-center w-fit">
           <Image
+            className="group-hover:scale-110 transition-all"
             src="/sell_laptop.svg"
             alt="Sell Laptop"
             width={150}
@@ -36,8 +39,9 @@ const Services: React.FC = () => {
           Sell Laptop
         </div>
 
-        <div className="flex flex-col justify-items-center gap-2 text-center w-fit">
+        <div className="group cursor-pointer flex flex-col justify-items-center gap-2 text-center w-fit">
           <Image
+            className="group-hover:scale-110 transition-all"
             src="/sell_smartwatch.svg"
             alt="Sell Smartwatch"
             width={150}
@@ -46,8 +50,14 @@ const Services: React.FC = () => {
           Sell Smartwatch
         </div>
 
-        <div className="flex flex-col justify-items-center gap-2 text-center w-fit relative">
-          <Image src="/more.svg" alt="More" width={150} height={120} />
+        <div className="group cursor-pointer flex flex-col justify-items-center gap-2 text-center w-fit relative">
+          <Image
+            src="/more.svg"
+            alt="More"
+            width={150}
+            height={120}
+            className="group-hover:scale-110 transition-all"
+          />
           <p className="absolute top-[30%] left-[30%] font-semibold text-black text-xl">
             MORE
           </p>

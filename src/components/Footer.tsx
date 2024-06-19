@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Link from "next/link";
+
 const Footer: React.FC = () => {
   return (
     <div>
@@ -5,12 +8,12 @@ const Footer: React.FC = () => {
         <div className="mx-auto w-full max-w-7xl">
           <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                Company
-              </h2>
+              <Link href="/">
+                <Image src="/soldold.svg" alt="logo" width={200} height={47} />
+              </Link>
               <ul className="text-black/50 dark:text-gray-400 font-medium">
-                <li className="mb-4">
-                  <a href="#" className=" hover:underline">
+                <li className="mb-4 mt-8">
+                  <a href="#" className="hover:underline block">
                     About
                   </a>
                 </li>
@@ -22,11 +25,6 @@ const Footer: React.FC = () => {
                 <li className="mb-4">
                   <a href="#" className="hover:underline">
                     Brand Center
-                  </a>
-                </li>
-                <li className="mb-4">
-                  <a href="#" className="hover:underline">
-                    Blog
                   </a>
                 </li>
               </ul>

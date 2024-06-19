@@ -4,7 +4,29 @@
 import Image from "next/image";
 import { useState } from "react";
 
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "@/components/ui/command";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
+import { Check, ChevronsUpDown } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 
@@ -306,6 +328,26 @@ const DEVICE_INFO = {
   accessories: ["Original Charger Of Device", "Box With Same IMEI"],
 } as const;
 
+const searcheableBrands = [
+  { label: "Apple", value: "apple" },
+  { label: "Samsung", value: "samsung" },
+  { label: "Mi", value: "mi" },
+  { label: "OnePlus", value: "oneplus" },
+  { label: "Vivo", value: "vivo" },
+  { label: "Oppo", value: "oppo" },
+  { label: "Realme", value: "realme" },
+  { label: "Motorola", value: "motorola" },
+  { label: "Lenovo", value: "lenovo" },
+  { label: "Nokia", value: "nokia" },
+  { label: "Nothing", value: "nothing" },
+  { label: "Poco", value: "poco" },
+  { label: "Google", value: "google" },
+  { label: "Infinix", value: "infinix" },
+  { label: "Techno", value: "techno" },
+  { label: "Iqoo", value: "iqoo" },
+  { label: "Honor", value: "honor" },
+];
+
 const SellPhone: React.FC = () => {
   const [moreBrands, setMoreBrands] = useState(false);
   const [selectBrand, setSelectBrand] = useState("");
@@ -332,6 +374,11 @@ const SellPhone: React.FC = () => {
   const [accessoriesAnswers, setAccessoriesAnswers] = useState([] as string[]);
   const [accessoriesButtonClicked, setAccessoriesButtonClicked] =
     useState(false);
+  const [showModels, setShowModels] = useState(false);
+  const [selectModels, setSelectModels] = useState("");
+
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState("");
 
   return (
     <div className="py-8 border-b w-full">
@@ -429,7 +476,8 @@ const SellPhone: React.FC = () => {
                   key={brand.name}
                   className="cursor-pointer hover:scale-[1.1] transition-all"
                   onClick={() => {
-                    brand.series && setSelectBrand(brand.name);
+                    // brand.series && setSelectBrand(brand.name);
+                    setSelectBrand("apple");
                   }}
                   src={brand.image}
                   alt={brand.name}
@@ -437,15 +485,86 @@ const SellPhone: React.FC = () => {
                   height={100}
                 />
               ))}
-              <button className="underline cursor-pointer">
-                Or Search By Model
-              </button>
+
+              <Dialog>
+                <DialogTrigger asChild>
+                  <button className="underline cursor-pointer">
+                    Or Search By Model
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="w-full">
+                  <DialogHeader>
+                    <DialogTitle>Search model</DialogTitle>
+                    <DialogDescription>
+                      <Popover open={open} onOpenChange={setOpen}>
+                        <PopoverTrigger asChild className="w-full mt-3">
+                          <Button
+                            variant="outline"
+                            role="combobox"
+                            aria-expanded={open}
+                            className="w-full justify-between"
+                          >
+                            {value
+                              ? searcheableBrands.find(
+                                  (brand) => brand.value === value
+                                )?.label
+                              : "Select model..."}
+                            <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                          </Button>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-full p-0">
+                          <Command>
+                            <CommandInput placeholder="Search model..." />
+                            <CommandList>
+                              <CommandEmpty>No framework found.</CommandEmpty>
+                              <CommandGroup>
+                                {searcheableBrands.map((brands) => (
+                                  <CommandItem
+                                    key={brands.value}
+                                    value={brands.value}
+                                    onSelect={(currentValue) => {
+                                      setValue(
+                                        currentValue === value
+                                          ? ""
+                                          : currentValue
+                                      );
+                                      setOpen(false);
+                                    }}
+                                  >
+                                    <Check
+                                      className={cn(
+                                        "mr-2 h-4 w-4",
+                                        value === brands.value
+                                          ? "opacity-100"
+                                          : "opacity-0"
+                                      )}
+                                    />
+                                    {brands.label}
+                                  </CommandItem>
+                                ))}
+                              </CommandGroup>
+                            </CommandList>
+                          </Command>
+                        </PopoverContent>
+                      </Popover>
+
+                      <Button
+                        disabled={!value}
+                        onClick={() => setSelectBrand("apple")}
+                        className="w-full mt-4 bg-amber-400 hover:bg-amber-300 text-black"
+                      >
+                        Apply
+                      </Button>
+                    </DialogDescription>
+                  </DialogHeader>
+                </DialogContent>
+              </Dialog>
             </div>
           </div>
         )
       )}
 
-      {selectBrand && !selectSeries && (
+      {selectBrand && !selectModels && (
         <div className="w-full mx-auto max-w-7xl px-2 2xl:px-0">
           <h3 className="text-2xl font-semibold">Select Series</h3>
 
@@ -454,8 +573,16 @@ const SellPhone: React.FC = () => {
               (series, i) => (
                 <Button
                   key={i}
-                  className="border-2 bg-transparent hover:bg-transparent hover:shadow-none text-gray-800 rounded-lg px-5 py-3 w-[12rem] transition-all shadow-md"
+                  className={cn(
+                    "border-2 bg-transparent hover:bg-transparent hover:shadow-none text-gray-800 rounded-lg px-5 py-3 w-[12rem] transition-all shadow-md",
+                    {
+                      "bg-amber-400 hover:bg-amber-400 shadow-none border-amber-400":
+                        selectSeries.toLowerCase() ===
+                        series.name.toLowerCase(),
+                    }
+                  )}
                   onClick={() => {
+                    setShowModels(true);
                     setSelectSeries(series.name);
                   }}
                 >
@@ -465,34 +592,40 @@ const SellPhone: React.FC = () => {
             )}
           </div>
 
-          <h3 className="text-2xl font-semibold mt-5">Select Models</h3>
+          {showModels && (
+            <>
+              <h3 className="text-2xl font-semibold mt-5">Select Models</h3>
 
-          <div className="mt-5 flex flex-wrap items-center justify-center sm:justify-start gap-y-3 gap-x-6 sm:gap-y-6 sm:gap-x-12 w-full">
-            {BRANDS.find((brand) => brand.name === selectBrand)?.series?.map(
-              (series, i) =>
-                series.models.map((model, j) => (
-                  <div
-                    key={j}
-                    className="border-2 bg-transparent group text-gray-800 rounded-lg px-5 py-3 w-[12rem] transition-all shadow-md flex justify-center items-center"
-                    // onClick={() => {
-                    //   setSelectSeries(model.name);
-                    // }}
-                  >
-                    <img
-                      className="group-hover:scale-[1.1] transition-all"
-                      src={model.img}
-                      alt={model.name}
-                      height={200}
-                      width={200}
-                    />
-                  </div>
-                ))
-            )}
-          </div>
+              <div className="mt-5 flex flex-wrap items-center justify-center sm:justify-start gap-y-3 gap-x-6 sm:gap-y-6 sm:gap-x-12 w-full">
+                {BRANDS.find(
+                  (brand) => brand.name === selectBrand
+                )?.series?.map((series, i) =>
+                  series.models.map((model, j) => (
+                    <div
+                      key={j}
+                      className="cursor-pointer border-2 bg-transparent group text-gray-800 rounded-lg px-5 py-3 w-[12rem] transition-all shadow-md flex justify-center items-center"
+                      onClick={() => {
+                        // setSelectSeries(model.name);
+                        setSelectModels(model.name);
+                      }}
+                    >
+                      <img
+                        className="group-hover:scale-[1.1] transition-all"
+                        src={model.img}
+                        alt={model.name}
+                        height={200}
+                        width={200}
+                      />
+                    </div>
+                  ))
+                )}
+              </div>
+            </>
+          )}
         </div>
       )}
 
-      {selectSeries && !exactValueButtonClicked && (
+      {selectModels && !exactValueButtonClicked && (
         <div className="mx-auto max-w-7xl w-full px-2 2xl:px-0">
           <h3 className="text-2xl font-semibold my-4">Sell Your iPhone 13</h3>
           <div className="w-full mx-auto max-w-7xl border-2 shadow-md rounded-lg py-3">
